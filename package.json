@@ -1,0 +1,89 @@
+{
+  "name": "chimoney-payment-widget",
+  "version": "0.0.2",
+  "description": "Accept Payment from card, wallets, mobile money, interac and other options powered by chimoney.io.",
+  "type": "module",
+  "main": "dist/index.cjs.js",
+  "browser": "dist/index.iife.js",
+  "exports": "./dist/index.js",
+  "scripts": {
+    "lint": "semistandard | snazzy",
+    "lint:fix": "semistandard --fix | snazzy",
+    "lint:test": "yarn lint && yarn test",
+    "test": "mocha \"tests/**/*.tests.js\"",
+    "test:coverage": "NODE_ENV=test c8 --all --include=lib/* --reporter=html --reporter=text mocha \"tests/**/*.tests.js\"",
+    "test:watch": "yarn test -- --watch",
+    "docs": "jsdoc --readme README.md ./lib/*.js -d ./docs && jsdoc2md ./lib/*.js > ./api.md",
+    "build": "rollup --config rollup.dist.config.js",
+    "build:full": "yarn docs && yarn build"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ],
+    "env": {
+      "test": {
+        "plugins": [
+          "istanbul"
+        ]
+      }
+    }
+  },
+  "nyc": {
+    "sourceMap": false,
+    "instrument": false
+  },
+  "semistandard": {
+    "ignore": [
+      "docs/",
+      "node_modules/",
+      "dist/"
+    ]
+  },
+  "targets": "> 0.25%, not dead",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Chimoney/payment-widget.git"
+  },
+  "keywords": [
+    "npm",
+    "package",
+    "template",
+    "javascript"
+  ],
+  "author": "Uchi Uchibeke <uchi@chimoney.io>",
+  "funding": {
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Chimoney/payment-widget/issues"
+  },
+  "engines": {
+    "node": ">= 18.x"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "homepage": "https://github.com/Chimoney/payment-widget#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.24.1",
+    "@babel/core": "^7.24.4",
+    "@babel/preset-env": "^7.24.4",
+    "@babel/register": "^7.23.7",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "c8": "^9.1.0",
+    "chai": "^5.1.0",
+    "cross-env": "^7.0.3",
+    "jsdoc": "^4.0.2",
+    "jsdoc-to-markdown": "^8.0.1",
+    "mocha": "^10.4.0",
+    "rollup": "^4.14.3",
+    "semistandard": "^17.0.0",
+    "snazzy": "^9.0.0",
+    "standard": "^17.1.0"
+  }
+}
