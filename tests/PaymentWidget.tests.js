@@ -1,6 +1,6 @@
 /* global beforeEach afterEach */
 import { describe } from 'mocha';
-import { PaymentWidget } from '../lib/index.js';
+import PaymentWidget from '../lib/index.js';
 
 describe('PaymentWidget', function () {
   let tool;

@@ -1,6 +1,6 @@
 {
   "name": "chimoney-payment-widget",
-  "version": "0.0.2",
+  "version": "0.0.21",
   "description": "Accept Payment from card, wallets, mobile money, interac and other options powered by chimoney.io.",
   "type": "module",
   "main": "dist/index.cjs.js",

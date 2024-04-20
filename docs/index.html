@@ -1,77 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
+<head>
+    <meta charset="utf-8">
     <title>JSDoc: Home</title>
 
-    <script src="scripts/prettify/prettify.js"></script>
-    <script src="scripts/prettify/lang-css.js"></script>
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <link
-      type="text/css"
-      rel="stylesheet"
-      href="styles/prettify-tomorrow.css"
-    />
-    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css" />
-  </head>
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
 
-  <body>
-    <div id="main">
-      <h1 class="page-title">Home</h1>
+<body>
 
-      <h3></h3>
+<div id="main">
 
-      <section>
-        <article>
-          <h1>Chimoney Payment Widget</h1>
-          <p>
-            <strong
-              >Simplify payments within your web application with Chimoney's
-              embedded payment widget.</strong
-            >
-          </p>
-          <div align="center" id="initial">
-            <a href="https://chimoney.io/" target="_blank">
-              <picture>
-                <img
-                  src="https://chimoney.io/assets/icons/chimoney-purple-logo.svg"
-                  width="280"
-                  alt="Logo"
-                />
-              </picture>
-            </a>
-          </div>
-          <p>
-            Our widget allows you to integrate a multi-currency payment gateway
-            directly into your web applications, supporting a seamless checkout
-            experience with customization options to match your brand.
-          </p>
-          <p>Install with: <code>$ yarn add chimoney-payment-widget</code></p>
-          <p>
-            For non-module usage, include directly in your HTML:
-            <code
-              >&lt;script
-              src=&quot;https://cdn.chimoney.io/chimoney-payment-widget.js&quot;&gt;&lt;/script&gt;</code
-            >.
-          </p>
-          <h2>Usage</h2>
-          <h3>For Module Bundlers</h3>
-          <p>
-            For projects using module bundlers like Webpack, Rollup, or when
-            using frameworks like React, Vue.js, etc.:
-          </p>
-          <pre
-            class="prettyprint source lang-bash"
-          ><code>import PaymentWidget from 'chimoney-payment-widget';
+    <h1 class="page-title">Home</h1>
+
+    
+
+
+
+    
+
+
+    <h3> </h3>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    <section>
+        <article><h1>Chimoney Payment Widget</h1>
+<p><strong>Simplify payments within your web application with Chimoney's embedded payment widget.</strong></p>
+<div align="center" id="initial">
+  <a href="https://chimoney.io/" target="_blank">
+  <picture>
+    <img src="https://chimoney.io/assets/icons/chimoney-purple-logo.svg" width="280" alt="Logo"/>
+  </picture>
+  </a>
+</div>
+<p>Our widget allows you to integrate a multi-currency payment gateway directly into your web applications, supporting a seamless checkout experience with customization options to match your brand.</p>
+<p>Install with:</p>
+<p><code>$ yarn add chimoney-payment-widget</code></p>
+<p>For non-module usage, include directly in your HTML:</p>
+<p><code>&lt;script src=&quot;https://cdn.jsdelivr.net/gh/Chimoney/payment-widget/dist/index.js&quot;&gt;&lt;/script&gt;</code>.</p>
+<h2>Usage</h2>
+<h3>For Module Bundlers</h3>
+<p>For projects using module bundlers like Webpack, Rollup, or when using frameworks like React, Vue.js, etc.:</p>
+<pre class="prettyprint source lang-bash"><code>import PaymentWidget from 'chimoney-payment-widget';
 
 // Initialize the widget with your configuration
 const paymentWidget = new PaymentWidget({
   brandColor: '#FF5722',
   brandName: 'Your Brand',
-  paymentLink: 'https://dash.chimoney.io/pay?issueID=your_unique_issue_id',
-  modalBackground: '#ffffff'
+  paymentLink: 'https://dash.chimoney.io/pay?issueID=your_unique_issue_id'
 });
 
 // To open the payment modal
@@ -84,14 +79,13 @@ paymentWidget.close();
 ### For Vanilla JavaScript
 For simple HTML/JavaScript applications, include the script and initialize the widget:
 ```html
-&lt;script src=&quot;https://cdn.chimoney.io/chimoney-payment-widget.js&quot;>&lt;/script>
+&lt;script src=&quot;https://cdn.jsdelivr.net/gh/Chimoney/payment-widget/dist/index.js&quot;>&lt;/script>
 &lt;script>
   document.addEventListener('DOMContentLoaded', function() {
     const paymentWidget = new PaymentWidget({
       brandColor: '#FF5722',
       brandName: 'Your Brand',
-      paymentLink: 'https://dash.chimoney.io/pay?issueID=your_unique_issue_id',
-      modalBackground: '#ffffff'
+      paymentLink: 'https://dash.chimoney.io/pay?issueID=your_unique_issue_id'
     });
 
     // Open the widget on button click
@@ -101,43 +95,24 @@ For simple HTML/JavaScript applications, include the script and initialize the w
   });
 &lt;/script>
 </code></pre>
-          <h3>Configuration Options</h3>
-          <p>
-            Configure your widget by passing options during initialization. Here
-            are the configurable options:
-          </p>
-          <ul>
-            <li>
-              brandColor: String, sets the primary color of the widget to match
-              your brand.
-            </li>
-            <li>brandName: String, displays your brand name on the widget.</li>
-            <li>
-              paymentLink: String, the unique URL to your Chimoney payment page.
-            </li>
-            <li>
-              modalBackground: String, background color to use for the widget.
-            </li>
-          </ul>
-          <h3>Customization</h3>
-          <p>
-            Customize the look and feel of the widget to match your website or
-            app:
-          </p>
-          <pre
-            class="prettyprint source lang-js"
-          ><code>const paymentWidget = new PaymentWidget({
+<h3>Configuration Options</h3>
+<p>Configure your widget by passing options during initialization. Here are the configurable options:</p>
+<ul>
+<li>brandColor: String, sets the primary color of the widget to match your brand.</li>
+<li>brandName: String, displays your brand name on the widget.</li>
+<li>paymentLink: String, the unique URL to your Chimoney payment page.</li>
+</ul>
+<h3>Customization</h3>
+<p>Customize the look and feel of the widget to match your website or app:</p>
+<pre class="prettyprint source lang-js"><code>const paymentWidget = new PaymentWidget({
   brandColor: '#4CAF50', // Green
   brandName: 'GreenTech',
   paymentLink: 'https://dash.chimoney.io/pay?issueID=your_custom_issue_id',
-  modalBackground: '#ffffff'
 });
 </code></pre>
-          <h3>More Examples</h3>
-          <h4>Integration in React</h4>
-          <pre
-            class="prettyprint source lang-jsx"
-          ><code>import React, { useEffect } from 'react';
+<h3>More Examples</h3>
+<h4>Integration in React</h4>
+<pre class="prettyprint source lang-jsx"><code>import React, { useEffect } from 'react';
 import PaymentWidget from 'chimoney-payment-widget';
 
 const PaymentButton = () => {
@@ -146,7 +121,6 @@ const PaymentButton = () => {
       brandColor: '#673AB7',
       brandName: 'My App',
       paymentLink: 'https://your.payment.url',
-      modalBackground: '#ffffff'
     });
 
     document.getElementById('paymentButton').onclick = function() {
@@ -159,8 +133,8 @@ const PaymentButton = () => {
 
 export default PaymentButton;
 </code></pre>
-          <h4>Integration in Vue.js</h4>
-          <pre class="prettyprint source lang-vue"><code>&lt;template>
+<h4>Integration in Vue.js</h4>
+<pre class="prettyprint source lang-vue"><code>&lt;template>
   &lt;button @click=&quot;openPayment&quot;>Pay with Chimoney&lt;/button>
 &lt;/template>
 
@@ -173,8 +147,7 @@ export default {
       const paymentWidget = new PaymentWidget({
         brandColor: '#3F51B5',
         brandName: 'VueApp',
-        paymentLink: 'https://your.payment.url',
-        modalBackground: '#ffffff'
+        paymentLink: 'https://your.payment.url'
       });
 
       paymentWidget.open();
@@ -183,80 +156,45 @@ export default {
 }
 &lt;/script>
 </code></pre>
-          <h2>What's included?</h2>
-          <h3>Tools / stack</h3>
-          <ul>
-            <li>🗪 <a href="https://babeljs.io/">Babel</a> for transpiling</li>
-            <li>
-              🪄 <a href="https://standardjs.com/">Standard</a> for linting
-            </li>
-            <li>
-              ⚗️ <a href="https://mochajs.org/">Mocha</a> and
-              <a href="https://www.chaijs.com">Chai</a> for testing
-            </li>
-            <li>
-              🔍 <a href="https://github.com/bcoe/c8">c8</a> for code coverage
-            </li>
-            <li>
-              📚 <a href="https://jsdoc.app/">JSDoc</a> for documentation and
-              <a href="https://www.npmjs.com/package/jsdoc-to-markdown"
-                >jsdoc-to-markdown</a
-              >
-              to create docs as markdown files
-            </li>
-            <li>
-              ⚡
-              <a href="https://github.com/features/actions">GitHub actions</a>
-              for continuous integration
-            </li>
-            <li>📦 <a href="https://rollupjs.org">Rollup</a> for bundling</li>
-          </ul>
-          <p>
-            All tools are defined as
-            <strong><code>dev-dependencies</code></strong
-            >!
-          </p>
-          <h2>Contributing and development</h2>
-          <p>
-            We provide an
-            <a href="./CONTRIBUTING.md">extensive contribution guideline</a> and
-            a <a href="./CODE_OF_CONDUCT.md">code of conduct</a> to help you in
-            making your contribution a success!
-          </p>
-          <h2>Security</h2>
-          <p>
-            Please read our <a href="./SECURITY.md">security policy</a> to get
-            to know which versions are covered.
-          </p>
-          <h2>License</h2>
-          <p>MIT, see <a href="LICENSE">license file</a></p>
-        </article>
-      </section>
-    </div>
+<h2>What's included?</h2>
+<h3>Tools / stack</h3>
+<ul>
+<li>🗪 <a href="https://babeljs.io/">Babel</a> for transpiling</li>
+<li>🪄 <a href="https://standardjs.com/">Standard</a> for linting</li>
+<li>⚗️ <a href="https://mochajs.org/">Mocha</a> and <a href="https://www.chaijs.com">Chai</a> for testing</li>
+<li>🔍 <a href="https://github.com/bcoe/c8">c8</a> for code coverage</li>
+<li>📚 <a href="https://jsdoc.app/">JSDoc</a> for documentation and <a href="https://www.npmjs.com/package/jsdoc-to-markdown">jsdoc-to-markdown</a> to create docs as markdown files</li>
+<li>⚡ <a href="https://github.com/features/actions">GitHub actions</a> for continuous integration</li>
+<li>📦 <a href="https://rollupjs.org">Rollup</a> for bundling</li>
+</ul>
+<p>All tools are defined as <strong><code>dev-dependencies</code></strong>!</p>
+<h2>Contributing and development</h2>
+<p>We provide an <a href="./CONTRIBUTING.md">extensive contribution guideline</a> and a <a href="./CODE_OF_CONDUCT.md">code of conduct</a>
+to help you in making your contribution a success!</p>
+<h2>Security</h2>
+<p>Please read our <a href="./SECURITY.md">security policy</a> to get to know which versions are covered.</p>
+<h2>License</h2>
+<p>MIT, see <a href="LICENSE">license file</a></p></article>
+    </section>
 
-    <nav>
-      <h2><a href="index.html">Home</a></h2>
-      <h3>Classes</h3>
-      <ul>
-        <li><a href="ChimoneyWidget.html">ChimoneyWidget</a></li>
-      </ul>
-      <h3>Global</h3>
-      <ul>
-        <li><a href="global.html#exists">exists</a></li>
-      </ul>
-    </nav>
 
-    <br class="clear" />
 
-    <footer>
-      Documentation generated by
-      <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Thu Apr 18
-      2024 22:14:48 GMT-0400 (Eastern Daylight Saving Time)
-    </footer>
 
-    <script>
-      prettyPrint();
-    </script>
-    <script src="scripts/linenumber.js"></script>
-  </body>
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="ChimoneyWidget.html">ChimoneyWidget</a></li></ul><h3>Global</h3><ul><li><a href="global.html#exists">exists</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Sat Apr 20 2024 18:37:55 GMT-0400 (Eastern Daylight Saving Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
 </html>
