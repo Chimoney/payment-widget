@@ -45,7 +45,6 @@ Creates an instance of ChimoneyWidget.
 | options.paymentLink | <code>string</code> |  | The URL to the Chimoney payment page, required for initializing the widget. This must be a valid URL. |
 | [options.brandColor] | <code>string</code> | <code>&quot;&#x27;#000&#x27;&quot;</code> | Customize the primary color of the payment widget to match your brand theme. Default is black. |
 | [options.brandName] | <code>string</code> | <code>&quot;&#x27;Chimoney&#x27;&quot;</code> | Your brand's name, which will be displayed on the widget to enhance trust. Default is 'Chimoney'. |
-| [options.backgroundColor] | <code>boolean</code> | <code>&quot;#ffffff&quot;</code> | The background color. |
 
 **Example**  
 ```js
@@ -73,9 +72,6 @@ Initializes modal and iframe components.
 | options.paymentLink | <code>string</code> |  | The URL to the Chimoney payment page. |
 | [options.brandColor] | <code>string</code> | <code>&quot;&#x27;#000&#x27;&quot;</code> | Primary color of the widget, default is black. |
 | [options.brandName] | <code>string</code> | <code>&quot;&#x27;Chimoney&#x27;&quot;</code> | Name of the brand, default is 'Chimoney'. |
-| [options.turnOffNotification] | <code>boolean</code> | <code>false</code> | If true, disables notifications from Chimoney. |
-| [options.meta] | <code>Object</code> |  | Metadata for tracking or additional purposes. |
-| [options.backgroundColor] | <code>boolean</code> | <code>&quot;#ffffff&quot;</code> | The background color. |
 
 <a name="ChimoneyWidget+validateOptions"></a>
 
@@ -155,7 +151,6 @@ Creates an instance of ChimoneyWidget.
 | options.paymentLink | <code>string</code> |  | The URL to the Chimoney payment page, required for initializing the widget. This must be a valid URL. |
 | [options.brandColor] | <code>string</code> | <code>&quot;&#x27;#000&#x27;&quot;</code> | Customize the primary color of the payment widget to match your brand theme. Default is black. |
 | [options.brandName] | <code>string</code> | <code>&quot;&#x27;Chimoney&#x27;&quot;</code> | Your brand's name, which will be displayed on the widget to enhance trust. Default is 'Chimoney'. |
-| [options.backgroundColor] | <code>boolean</code> | <code>&quot;#ffffff&quot;</code> | The background color. |
 
 **Example**  
 ```js
@@ -183,9 +178,6 @@ Initializes modal and iframe components.
 | options.paymentLink | <code>string</code> |  | The URL to the Chimoney payment page. |
 | [options.brandColor] | <code>string</code> | <code>&quot;&#x27;#000&#x27;&quot;</code> | Primary color of the widget, default is black. |
 | [options.brandName] | <code>string</code> | <code>&quot;&#x27;Chimoney&#x27;&quot;</code> | Name of the brand, default is 'Chimoney'. |
-| [options.turnOffNotification] | <code>boolean</code> | <code>false</code> | If true, disables notifications from Chimoney. |
-| [options.meta] | <code>Object</code> |  | Metadata for tracking or additional purposes. |
-| [options.backgroundColor] | <code>boolean</code> | <code>&quot;#ffffff&quot;</code> | The background color. |
 
 <a name="ChimoneyWidget+validateOptions"></a>
 

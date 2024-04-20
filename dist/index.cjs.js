@@ -8,7 +8,6 @@
  * @param {string} options.paymentLink - The URL to the Chimoney payment page, required for initializing the widget. This must be a valid URL.
  * @param {string} [options.brandColor='#000'] - Customize the primary color of the payment widget to match your brand theme. Default is black.
  * @param {string} [options.brandName='Chimoney'] - Your brand's name, which will be displayed on the widget to enhance trust. Default is 'Chimoney'.
- * @param {boolean} [options.backgroundColor="#ffffff"] - The background color.
  *
  * @throws {Error} Throws an error if the paymentLink is not provided or is invalid.
  *
@@ -35,9 +34,6 @@ var ChimoneyWidget = /*#__PURE__*/function () {
    * @param {string} options.paymentLink - The URL to the Chimoney payment page.
    * @param {string} [options.brandColor='#000'] - Primary color of the widget, default is black.
    * @param {string} [options.brandName='Chimoney'] - Name of the brand, default is 'Chimoney'.
-   * @param {boolean} [options.turnOffNotification=false] - If true, disables notifications from Chimoney.
-   * @param {Object} [options.meta] - Metadata for tracking or additional purposes.
-   * @param {boolean} [options.backgroundColor="#ffffff"] - The background color.
    * @throws {Error} If `paymentLink` is not provided or invalid.
    */
   function ChimoneyWidget() {
@@ -47,6 +43,7 @@ var ChimoneyWidget = /*#__PURE__*/function () {
     this.options = options;
     this.modal = null;
     this.iframe = null;
+    this.loadingIndicator = null;
     this.createModal();
   }
 
@@ -59,7 +56,7 @@ var ChimoneyWidget = /*#__PURE__*/function () {
     key: "validateOptions",
     value: function validateOptions(options) {
       if (!options.paymentLink || !this.isValidUrl(options.paymentLink)) {
-        throw new Error('Invalid or missing paymentLink.');
+        throw new Error("Invalid or missing paymentLink.");
       }
     }
 
@@ -72,8 +69,8 @@ var ChimoneyWidget = /*#__PURE__*/function () {
     key: "isValidUrl",
     value: function isValidUrl(url) {
       try {
-        URL(url);
-        return true;
+        url = new URL(url);
+        return url;
       } catch (e) {
         return false;
       }
@@ -87,12 +84,19 @@ var ChimoneyWidget = /*#__PURE__*/function () {
     key: "createModal",
     value: function createModal() {
       var _this = this;
-      var modalHTML = "\n            <div id=\"chimoneyModal\" style=\"display:none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.4);\">\n                <div style=\"background-color: #fefefe; margin: 15% auto; padding: 20px; border: 1px solid #888; width: 80%; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);\">\n                    <span id=\"closeModal\" style=\"color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer;\">&times;</span>\n                    <iframe id=\"chimoneyPaymentFrame\" style=\"width:100%; height:500px; border:none; border-radius: 5px;\"></iframe>\n                </div>\n            </div>\n        ";
-      document.body.insertAdjacentHTML('beforeend', modalHTML);
-      this.modal = document.getElementById('chimoneyModal');
-      this.iframe = document.getElementById('chimoneyPaymentFrame');
-      document.getElementById('closeModal').addEventListener('click', function () {
+      var modalHTML = "\n            <div id=\"chimoneyModal\" style=\"display:none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; min-height:70vh; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.8);\">\n                <div style=\"background-color: #ffffff; margin: 2% auto; padding: 0px; padding-bottom: 0px; border: 1px solid #dddddd; width: 90%; height: 90%; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); max-width:550px;\">\n                    <span id=\"closeModal\" style=\"color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer;padding-right: 10px;\">&times;</span>\n                    <iframe id=\"chimoneyPaymentFrame\" style=\"width:100%; min-height:500px; border:none; border-radius: 5px; z-index: 1000\"></iframe>\n                    <div id=\"loadingIndicator\" style=\"position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display: block;\">\n                      <img src=\"https://imagedelivery.net/FWOxhF6qUOoRrmL6RllgbQ/519deb7a-a00a-4d41-24ce-9c46d17f7f00/public\" alt=\"Loading...\" style=\"width: 270px; height: 180px;\">\n                    </div>\n                </div>\n            </div>\n        ";
+      document.body.insertAdjacentHTML("beforeend", modalHTML);
+      this.modal = document.getElementById("chimoneyModal");
+      this.modal.style.minHeight = "80vh";
+      this.iframe = document.getElementById("chimoneyPaymentFrame");
+      this.loadingIndicator = document.getElementById("loadingIndicator");
+      document.getElementById("closeModal").addEventListener("click", function () {
         return _this.close();
+      });
+
+      // Show loading indicator until the iframe is fully loaded
+      this.iframe.addEventListener("load", function () {
+        _this.loadingIndicator.style.display = "none";
       });
     }
 
@@ -102,12 +106,13 @@ var ChimoneyWidget = /*#__PURE__*/function () {
      */
   }, {
     key: "open",
-    value: function open(paymentLink) {
-      this.applyBranding(); // Apply branding styles if any
-      this.iframe.style.width = '100%';
-      this.iframe.style.height = '100%';
-      this.iframe.src = this.appendCustomizations(paymentLink);
-      this.modal.style.display = 'block';
+    value: function open() {
+      this.applyBranding();
+      this.iframe.style.width = "100%";
+      this.iframe.style.height = "90%";
+      this.iframe.src = this.appendCustomizations(this.options.paymentLink);
+      this.modal.style.display = "block";
+      this.loadingIndicator.style.display = "block"; // Show loading indicator
     }
 
     /**
@@ -117,26 +122,23 @@ var ChimoneyWidget = /*#__PURE__*/function () {
   }, {
     key: "close",
     value: function close() {
-      this.modal.style.display = 'none';
+      this.modal.style.display = "none";
     }
   }, {
     key: "applyBranding",
     value: function applyBranding() {
       if (this.options.brandColor) {
-        this.modal.querySelector('div').style.borderColor = this.options.brandColor;
-      }
-      if (this.options.modalBackground) {
-        this.modal.style.backgroundColor = this.options.modalBackground;
+        this.modal.querySelector("div").style.borderColor = this.options.brandColor;
       }
     }
   }, {
     key: "appendCustomizations",
     value: function appendCustomizations(url) {
       // Assuming the Chimoney API can handle URL parameters for customization
-      var urlParams = new URLSearchParams(this.options).toString();
-      return "".concat(url, "?").concat(urlParams);
+      var urlParams = decodeURIComponent(new URLSearchParams(this.options).toString());
+      return "".concat(url, "&").concat(urlParams);
     }
   }]);
 }();
-exports.PaymentWidget = ChimoneyWidget;
+module.exports = ChimoneyWidget;
 //# sourceMappingURL=index.cjs.js.map

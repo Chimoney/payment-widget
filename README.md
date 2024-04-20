@@ -13,10 +13,12 @@ __Simplify payments within your web application with Chimoney's embedded payment
 Our widget allows you to integrate a multi-currency payment gateway directly into your web applications, supporting a seamless checkout experience with customization options to match your brand.
 
 Install with:
+
 `$ yarn add chimoney-payment-widget`
 
 For non-module usage, include directly in your HTML:
-`<script src="https://cdn.chimoney.io/chimoney-payment-widget.js"></script>`.
+
+`<script src="https://cdn.jsdelivr.net/gh/Chimoney/payment-widget/dist/index.js"></script>`.
 
 ## Usage
 
@@ -32,8 +34,7 @@ import PaymentWidget from 'chimoney-payment-widget';
 const paymentWidget = new PaymentWidget({
   brandColor: '#FF5722',
   brandName: 'Your Brand',
-  paymentLink: 'https://dash.chimoney.io/pay?issueID=your_unique_issue_id',
-  modalBackground: '#ffffff'
+  paymentLink: 'https://dash.chimoney.io/pay?issueID=your_unique_issue_id'
 });
 
 // To open the payment modal
@@ -46,14 +47,13 @@ paymentWidget.close();
 ### For Vanilla JavaScript
 For simple HTML/JavaScript applications, include the script and initialize the widget:
 ```html
-<script src="https://cdn.chimoney.io/chimoney-payment-widget.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/Chimoney/payment-widget/dist/index.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     const paymentWidget = new PaymentWidget({
       brandColor: '#FF5722',
       brandName: 'Your Brand',
-      paymentLink: 'https://dash.chimoney.io/pay?issueID=your_unique_issue_id',
-      modalBackground: '#ffffff'
+      paymentLink: 'https://dash.chimoney.io/pay?issueID=your_unique_issue_id'
     });
 
     // Open the widget on button click
@@ -71,7 +71,6 @@ Configure your widget by passing options during initialization. Here are the con
 - brandColor: String, sets the primary color of the widget to match your brand.
 - brandName: String, displays your brand name on the widget.
 - paymentLink: String, the unique URL to your Chimoney payment page.
-- modalBackground: String, background color to use for the widget.
 
 ### Customization
 Customize the look and feel of the widget to match your website or app:
@@ -82,7 +81,6 @@ const paymentWidget = new PaymentWidget({
   brandColor: '#4CAF50', // Green
   brandName: 'GreenTech',
   paymentLink: 'https://dash.chimoney.io/pay?issueID=your_custom_issue_id',
-  modalBackground: '#ffffff'
 });
 ```
 
@@ -101,7 +99,6 @@ const PaymentButton = () => {
       brandColor: '#673AB7',
       brandName: 'My App',
       paymentLink: 'https://your.payment.url',
-      modalBackground: '#ffffff'
     });
 
     document.getElementById('paymentButton').onclick = function() {
@@ -131,8 +128,7 @@ export default {
       const paymentWidget = new PaymentWidget({
         brandColor: '#3F51B5',
         brandName: 'VueApp',
-        paymentLink: 'https://your.payment.url',
-        modalBackground: '#ffffff'
+        paymentLink: 'https://your.payment.url'
       });
 
       paymentWidget.open();
