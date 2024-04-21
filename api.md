@@ -7,14 +7,6 @@
 <dd></dd>
 </dl>
 
-## Constants
-
-<dl>
-<dt><a href="#exists">exists</a> ⇒ <code>boolean</code></dt>
-<dd><p>Returns true of a given parameter is not null and not undefined.</p>
-</dd>
-</dl>
-
 <a name="ChimoneyWidget"></a>
 
 ## ChimoneyWidget
@@ -227,15 +219,3 @@ Closes the modal containing the iframe.
 This method hides the modal, effectively closing the payment interface.
 
 **Kind**: instance method of [<code>ChimoneyWidget</code>](#ChimoneyWidget)  
-<a name="exists"></a>
-
-## exists ⇒ <code>boolean</code>
-Returns true of a given parameter is not null and not undefined.
-
-**Kind**: global constant  
-**Returns**: <code>boolean</code> - true if defined, otherwise false  
-
-| Param | Description |
-| --- | --- |
-| any | any input is feasible |
-
