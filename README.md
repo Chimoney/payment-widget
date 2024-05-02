@@ -18,7 +18,7 @@ Install with:
 
 For non-module usage, include directly in your HTML:
 
-`<script src="https://cdn.jsdelivr.net/gh/Chimoney/payment-widget/dist/chimoney-payment-widget.umd.js"></script>`.
+`<script src="https://cdn.jsdelivr.net/gh/Chimoney/payment-widget@main/dist/chimoney-payment-widget.umd.js"></script>`.
 
 ## Usage
 
@@ -47,7 +47,7 @@ paymentWidget.close();
 ### For Vanilla JavaScript
 For simple HTML/JavaScript applications, include the script and initialize the widget:
 ```html
-<script src="https://cdn.jsdelivr.net/gh/Chimoney/payment-widget/dist/chimoney-payment-widget.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/Chimoney/payment-widget@main/dist/chimoney-payment-widget.umd.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     const paymentWidget = new PaymentWidget({
