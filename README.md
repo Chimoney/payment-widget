@@ -68,9 +68,11 @@ For simple HTML/JavaScript applications, include the script and initialize the w
 ### Configuration Options
 Configure your widget by passing options during initialization. Here are the configurable options:
 
-- brandColor: String, sets the primary color of the widget to match your brand.
-- brandName: String, displays your brand name on the widget.
+- brandColor: String, sets the primary color of the widget to match your brand. (optional)
+- brandName: String, displays your brand name on the widget. (optional)
 - paymentLink: String, the unique URL to your Chimoney payment page.
+- onPaymentSuccess - Function, The callback after payment is completed. (optional)
+- onWidgetClosed - Function, The callback when modal is closed. (optional)
 
 ### Customization
 Customize the look and feel of the widget to match your website or app:
