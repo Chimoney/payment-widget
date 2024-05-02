@@ -35,6 +35,8 @@ Creates an instance of ChimoneyWidget.
 | --- | --- | --- | --- |
 | options | <code>Object</code> |  | Configuration options for the widget. |
 | options.paymentLink | <code>string</code> |  | The URL to the Chimoney payment page, required for initializing the widget. This must be a valid URL. |
+| options.onPaymentSuccess | <code>string</code> |  | The callback after payment is completed. This must be a valid function. |
+| options.onWidgetClosed | <code>string</code> |  | The callback when modal is closed. This must be a valid function. |
 | [options.brandColor] | <code>string</code> | <code>&quot;&#x27;#000&#x27;&quot;</code> | Customize the primary color of the payment widget to match your brand theme. Default is black. |
 | [options.brandName] | <code>string</code> | <code>&quot;&#x27;Chimoney&#x27;&quot;</code> | Your brand's name, which will be displayed on the widget to enhance trust. Default is 'Chimoney'. |
 
@@ -62,6 +64,8 @@ Initializes modal and iframe components.
 | --- | --- | --- | --- |
 | options | <code>Object</code> |  | Configuration options for the widget. |
 | options.paymentLink | <code>string</code> |  | The URL to the Chimoney payment page. |
+| options.onPaymentSuccess | <code>string</code> |  | The callback after payment is completed. |
+| options.onWidgetClosed | <code>string</code> |  | The callback when modal is closed. |
 | [options.brandColor] | <code>string</code> | <code>&quot;&#x27;#000&#x27;&quot;</code> | Primary color of the widget, default is black. |
 | [options.brandName] | <code>string</code> | <code>&quot;&#x27;Chimoney&#x27;&quot;</code> | Name of the brand, default is 'Chimoney'. |
 
@@ -141,6 +145,8 @@ Creates an instance of ChimoneyWidget.
 | --- | --- | --- | --- |
 | options | <code>Object</code> |  | Configuration options for the widget. |
 | options.paymentLink | <code>string</code> |  | The URL to the Chimoney payment page, required for initializing the widget. This must be a valid URL. |
+| options.onPaymentSuccess | <code>string</code> |  | The callback after payment is completed. This must be a valid function. |
+| options.onWidgetClosed | <code>string</code> |  | The callback when modal is closed. This must be a valid function. |
 | [options.brandColor] | <code>string</code> | <code>&quot;&#x27;#000&#x27;&quot;</code> | Customize the primary color of the payment widget to match your brand theme. Default is black. |
 | [options.brandName] | <code>string</code> | <code>&quot;&#x27;Chimoney&#x27;&quot;</code> | Your brand's name, which will be displayed on the widget to enhance trust. Default is 'Chimoney'. |
 
@@ -168,6 +174,8 @@ Initializes modal and iframe components.
 | --- | --- | --- | --- |
 | options | <code>Object</code> |  | Configuration options for the widget. |
 | options.paymentLink | <code>string</code> |  | The URL to the Chimoney payment page. |
+| options.onPaymentSuccess | <code>string</code> |  | The callback after payment is completed. |
+| options.onWidgetClosed | <code>string</code> |  | The callback when modal is closed. |
 | [options.brandColor] | <code>string</code> | <code>&quot;&#x27;#000&#x27;&quot;</code> | Primary color of the widget, default is black. |
 | [options.brandName] | <code>string</code> | <code>&quot;&#x27;Chimoney&#x27;&quot;</code> | Name of the brand, default is 'Chimoney'. |
 
